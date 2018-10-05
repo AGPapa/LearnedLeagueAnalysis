@@ -13,25 +13,15 @@ md = "25"
 
 day_key = "ll" + ll + "md" + md
 
-#text = open(day_key + "rA_Metro.html").read()
-#sys.stdout.write(text);
-#text = text.replace('<I>', '');
-#text = text.replace('</I>', '');
-#tree = html.fromstring(text)
-
-#path = "//a[text()='Q1']/../../text()"
-#q1 = tree.xpath(path)[1]
-
-
 q_correct_row_path = "//table[@summary='Data table for current LL standings']/tbody/tr"
 
 player_history = {}
 
-for l in range (78, 79): #end:78
+for l in range (76, 79): #end:78
     ll = str(l)
 
     rundle_file = open("rundles_ll" + ll + ".txt")
-    rundles = rundle_file.read().split("\n")
+    rundles = rundle_file.read().split("\n")[0:200]
     rundles = filter(None, rundles)
     rundle_file.close()
 

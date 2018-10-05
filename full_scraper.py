@@ -4,11 +4,17 @@ import time
 from random import random
 import os
 
-for l in range (78, 79): #end:78
+already_scraped_file = open("scraped_pages.txt")
+already_scraped =  already_scraped_file.read().split("\n")
+already_scraped =  filter(None, already_scraped)
+already_scraped_file.close()
+
+
+for l in range (75, 79): #end:78
     ll = str(l)
 
     rundle_file = open("rundles_ll" + ll + ".txt")
-    rundles = rundle_file.read().split("\n")[0:200]
+    rundles = rundle_file.read().split("\n")[0:250]
     rundles = filter(None, rundles)
     rundle_file.close()
 
@@ -19,7 +25,8 @@ for l in range (78, 79): #end:78
 
             day_key = "ll" + ll + "md" + md
 
-            if not os.path.isfile("full_page_data/" + day_key + "r" + rundle + ".html"):
+            filename = day_key + "r" + rundle + ".html"
+            if (filename not in already_scraped) and (not os.path.isfile("full_page_data/" + filename)):
 
                 print("writing " + day_key + "r" + rundle);
                 time.sleep(4 + random())
