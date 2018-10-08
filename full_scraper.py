@@ -10,11 +10,11 @@ already_scraped =  filter(None, already_scraped)
 already_scraped_file.close()
 
 
-for l in range (75, 79): #end:78
+for l in range (78, 74,-1): #end:78
     ll = str(l)
 
     rundle_file = open("rundles_ll" + ll + ".txt")
-    rundles = rundle_file.read().split("\n")[0:250]
+    rundles = rundle_file.read().split("\n")
     rundles = filter(None, rundles)
     rundle_file.close()
 

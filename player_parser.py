@@ -8,20 +8,17 @@ num_extra_rows = 3
 name_col = 7
 q_cols = range(0, 6)
 
-ll = "78"
-md = "25"
-
-day_key = "ll" + ll + "md" + md
-
 q_correct_row_path = "//table[@summary='Data table for current LL standings']/tbody/tr"
 
 player_history = {}
 
-for l in range (76, 79): #end:78
+for l in range (75, 79): #end:78
     ll = str(l)
 
+    print("Parsing LL" + ll)
+
     rundle_file = open("rundles_ll" + ll + ".txt")
-    rundles = rundle_file.read().split("\n")[0:200]
+    rundles = rundle_file.read().split("\n")
     rundles = filter(None, rundles)
     rundle_file.close()
 

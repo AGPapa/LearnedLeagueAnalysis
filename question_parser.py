@@ -11,7 +11,7 @@ q_cols = range(1, 7)
 
 q_history = {}
 
-for l in range (78, 79): #end:78
+for l in range (75, 79): #end:78
     ll = str(l)
 
     for d in range(1, 26): #end: 25
